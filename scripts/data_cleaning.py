@@ -9,7 +9,7 @@ def load_data(file_path: str) -> pd.DataFrame:
     Returns:
         pd.DataFrame: The loaded dataset.
     """
-    df = pd.read_csv(file_path)
+    df = pd.read_excel(file_path)
     return df
 
 def handle_missing_values(df: pd.DataFrame) -> pd.DataFrame:
@@ -77,6 +77,6 @@ def clean_data(file_path: str, output_path: str) -> None:
 
 
 if __name__ == "__main__":
-    file_path = "data/raw/data.csv"
-    output_path = "data/processed/data.csv"
+    file_path = "C:/Users/danie/Documents/GitHub/customer-loyalty-segmentation/data/raw/online_retail_II.xlsx"
+    output_path = "C:/Users/danie/Documents/GitHub/customer-loyalty-segmentation/data/raw/data_cleaned.csv"
     clean_data(file_path, output_path)
