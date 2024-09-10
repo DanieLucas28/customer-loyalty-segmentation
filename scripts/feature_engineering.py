@@ -14,7 +14,7 @@ def load_data(file_path: str) -> pd.DataFrame:
     df['InvoiceDate'] = pd.to_datetime(df['InvoiceDate'])
     df = df[df['Country'] == 'United Kingdom']
     
-    return
+    return df
 
 def create_rfm_features(df: pd.DataFrame) -> pd.DataFrame:
     """
@@ -99,4 +99,10 @@ def feature_engineering(input_file, output_file) -> pd.DataFrame:
     # Normalize the features
     df = normalize_features(df)
     # Save the features to a csv file
+    df = df.reset_index()
+    df['Customer ID'] = df['Customer ID'].astype(int)
     df.to_csv(output_file, index=False)
+
+input_file = 'C:/Users/danie/Documents/GitHub/customer-loyalty-segmentation/data/processed/clean_data.csv'
+output_file = 'C:/Users/danie/Documents/GitHub/customer-loyalty-segmentation/data/processed/customer_features.csv'
+feature_engineering(input_file, output_file)
