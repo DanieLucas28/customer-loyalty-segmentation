@@ -1,5 +1,6 @@
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
+import joblib
 
 def load_data(file_path: str) -> pd.DataFrame:
     """
@@ -69,7 +70,8 @@ def normalize_features(df: pd.DataFrame) -> pd.DataFrame:
     """
     scaler = StandardScaler()
     df[['Recency', 'Frequency', 'Monetary', 'Total Orders', 'Average Price']] = scaler.fit_transform(df[['Recency', 'Frequency', 'Monetary', 'Total Orders', 'Average Price']])
-
+    joblib.dump(scaler, 'C:/Users/danie/Documents/GitHub/customer-loyalty-segmentation/scalers/standard_scaler.pkl')
+    
     return df
 
 def feature_engineering(input_file, output_file) -> pd.DataFrame:
