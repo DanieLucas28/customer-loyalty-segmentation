@@ -1,5 +1,6 @@
 import pandas as pd
 
+
 def load_data(file_path: str) -> pd.DataFrame:
     """
     Load the dataset from csv file.
@@ -11,6 +12,7 @@ def load_data(file_path: str) -> pd.DataFrame:
     """
     df = pd.read_excel(file_path)
     return df
+
 
 def handle_missing_values(df: pd.DataFrame) -> pd.DataFrame:
     """
@@ -25,6 +27,7 @@ def handle_missing_values(df: pd.DataFrame) -> pd.DataFrame:
     df = df.dropna(subset=['Description', 'Customer ID'])
     return df
 
+
 def remove_negative_values(df: pd.DataFrame) -> pd.DataFrame:
     """
     Remove rows with negative values in columns 'Quantity' and 'Price'.
@@ -37,6 +40,7 @@ def remove_negative_values(df: pd.DataFrame) -> pd.DataFrame:
     df = df[(df['Quantity'] > 0) & (df['Price'] > 0)]
     return df
 
+
 def remove_outliers(df: pd.DataFrame, quantile: float = 0.95) -> pd.DataFrame:
     """
     Remove outliers in columns 'Quantity' and 'Price'.
@@ -47,8 +51,9 @@ def remove_outliers(df: pd.DataFrame, quantile: float = 0.95) -> pd.DataFrame:
     Returns:
         pd.DataFrame: The dataset with outliers removed.
     """
-    df = df[(df['Quantity']< df['Quantity'].quantile(quantile)) & (df['Price'] < df['Price'].quantile(quantile))]
+    df = df[(df['Quantity'] < df['Quantity'].quantile(quantile)) & (df['Price'] < df['Price'].quantile(quantile))]
     return df
+
 
 def remove_duplicates(df: pd.DataFrame) -> pd.DataFrame:
     """
@@ -61,19 +66,40 @@ def remove_duplicates(df: pd.DataFrame) -> pd.DataFrame:
     df = df.drop_duplicates()
     return df
 
-def clean_data(file_path: str, output_path: str) -> None:
+
+def clean_data(file_path: str, output_path: str = None) -> pd.DataFrame:
     """
-    Clean the dataset and save the cleaned dataset to a csv file.
+    Clean the dataset by handling missing values, removing negative values, outliers, and duplicates.
+    Saves the cleaned dataset to a csv file if output_path is provided.
+    
     Args:
         file_path (str): The path to the csv file.
-        output_path (str): The path to save the cleaned dataset.
+        output_path (str): The path to save the cleaned dataset. Optional.
+    
+    Returns:
+        pd.DataFrame: The cleaned dataset.
     """
+
+    # Load the dataset
     df = load_data(file_path)
+
+    # Handle missing values
     df = handle_missing_values(df)
+
+    # Remove negative values
     df = remove_negative_values(df)
+
+    # Remove outliers
     df = remove_outliers(df)
+
+    # Remove duplicates
     df = remove_duplicates(df)
-    df.to_csv(output_path, index=False)
+
+    # Save the cleaned data if output_path is provided
+    if output_path:
+        df.to_csv(output_path, index=False)
+
+    return df
 
 
 if __name__ == "__main__":
