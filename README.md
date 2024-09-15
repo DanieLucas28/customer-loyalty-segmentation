@@ -37,32 +37,30 @@ The project is organized into the following directories:
 
 ```plaintext
 ├── data/
+|   ├── clusters.csv   # Final csv with clustered data
 │   ├── raw/
 │   │   └── online_retail_ii.csv    # Raw data
 │   ├── processed/
 │   │   └── cleaned_data.csv        # Cleaned and processed data
-│   └── README.md                   # Instructions on how to obtain and process the data
+│   │   └── customer_features.csv   # Feature engineering data
 │
+├── flows/
+│   ├── run_flow.py # Prefect flow to execute all pipeline tasks.
+|
 ├── notebooks/
-│   ├── 01_eda.ipynb                # Exploratory Data Analysis (EDA)
-│   ├── 02_feature_engineering.ipynb # Feature creation and transformation
-│   ├── 03_clustering_models.ipynb   # Application of clustering algorithms
-│   └── 04_validation.ipynb         # Cluster validation and interpretation
+│   ├── 01_eda.ipynb                            # Exploratory Data Analysis (EDA)
+│   ├── 02_detalied_eda.ipynb                   # Exploratory Data Analysis (EDA)
+│   ├── 03_feature_engineering.ipynb            # Feature creation and transformation
+│   ├── 04_clustering_models.ipynb              # Application of clustering algorithms
+│   └── 05_suggestions_actions_by_group.ipynb   # Cluster validation and interpretation
 │
+├── scalers/
+│   ├── standard_scaler.plk          # The trained `StandardScaler` object
+|
 ├── scripts/
 │   ├── data_cleaning.py            # Data cleaning script
 │   ├── feature_engineering.py      # Feature engineering script
-│   ├── clustering.py               # Script for applying clustering algorithms
-│   └── evaluation.py               # Script for validating clusters
-│
-├── reports/
-│   └── cluster_analysis.pdf        # Detailed report on the identified clusters
-│
-├── src/
-│   └── utils/                      # Utility functions and helpers
-│       ├── data_processing.py
-│       └── visualization.py
+│   ├── apply_clustering.py         # Script for applying clustering algorithms
 │
 ├── README.md                       # Project overview and documentation
-├── requirements.txt                # Python libraries required for the project
 └── LICENSE.md                      # Project license
