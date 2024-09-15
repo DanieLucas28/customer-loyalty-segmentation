@@ -1,5 +1,14 @@
 # Customer Loyalty Segmentation for Enhanced Retention Strategies
 
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-1.2%2B-blue?logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-1.20%2B-lightblue?logo=numpy&logoColor=white)
+![Scikit-learn](https://img.shields.io/badge/Scikit--learn-0.24%2B-orange?logo=scikit-learn&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-3.3%2B-blueviolet?logo=matplotlib&logoColor=white)
+![Seaborn](https://img.shields.io/badge/Seaborn-0.11%2B-teal?logo=seaborn&logoColor=white)
+![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange?logo=jupyter&logoColor=white)
+![Prefect](https://img.shields.io/badge/Prefect-2.0%2B-blue?logo=prefect&logoColor=white)
+
 ## Project Overview
 This project aims to segment customers based on their purchasing behavior and interaction patterns to optimize loyalty campaigns. By identifying distinct groups of customers, the goal is to create personalized retention strategies that improve customer experience and increase loyalty, directly impacting Customer Lifetime Value (CLV).
 
