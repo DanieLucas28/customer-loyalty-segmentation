@@ -15,7 +15,7 @@ By answering these questions, the project provides actionable insights that can 
 ## Objectives
 - **Customer Segmentation:** Identify distinct customer groups based on purchasing behavior and interactions with loyalty programs.
 - **Profile Analysis:** Analyze cluster profiles to identify opportunities for personalized loyalty campaigns.
-- **Validation:** Validate the clustering results using both quantitative metrics (e.g., Silhouette Score) and qualitative assessments (e.g., ROI analysis of targeted campaigns).
+- **Validation:** Validate the clustering results using both quantitative metrics (e.g., Silhouette Score).
 - **Automation:** Implement a pipeline to automatically update customer segments and adjust loyalty strategies as needed.
 
 ## Data Source
@@ -30,7 +30,7 @@ The dataset used for this project is the **"Online Retail II"** dataset from the
   - **Scikit-learn:** For applying clustering algorithms and validation metrics.
   - **Matplotlib, Seaborn:** For data visualization and graphical analysis.
   - **Jupyter Notebooks:** For interactive data exploration and model development.
-  - **Airflow:** (Optional) For automating the data pipeline.
+  - **Prefect:** (Optional) For automating the data pipeline.
   
 ## Project Structure
 The project is organized into the following directories:
