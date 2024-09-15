@@ -54,7 +54,7 @@ The project is organized into the following directories:
 │   │   └── customer_features.csv   # Feature engineering data
 │
 ├── flows/
-│   ├── run_flow.py # Prefect flow to execute all pipeline tasks.
+│   └── run_flow.py # Prefect flow to execute all pipeline tasks.
 |
 ├── notebooks/
 │   ├── 01_eda.ipynb                            # Exploratory Data Analysis (EDA)
@@ -64,12 +64,12 @@ The project is organized into the following directories:
 │   └── 05_suggestions_actions_by_group.ipynb   # Cluster validation and interpretation
 │
 ├── scalers/
-│   ├── standard_scaler.plk          # The trained `StandardScaler` object
+│   └── standard_scaler.plk          # The trained `StandardScaler` object
 |
 ├── scripts/
 │   ├── data_cleaning.py            # Data cleaning script
 │   ├── feature_engineering.py      # Feature engineering script
-│   ├── apply_clustering.py         # Script for applying clustering algorithms
+│   └── apply_clustering.py         # Script for applying clustering algorithms
 │
 ├── README.md                       # Project overview and documentation
 └── LICENSE.md                      # Project license
